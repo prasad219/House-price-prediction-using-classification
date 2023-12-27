@@ -1,0 +1,22 @@
+<html>  
+	<head>  
+		<title>Result</title>  
+	</head> 
+ 
+	<body>  
+		<center> 
+		<h1>high price range = above 10000000</h1>
+		<h1>normal price range = between 10000000 and 6000000</h1>
+		<h1>low price range = below 6000000</h1>
+		<br><br>
+		{%if data==0%}  
+		<h1>high price range</h1>    
+		{%elif data==1%}  
+		<h1>low price range</h1>  
+		{%else%}  
+		<h1>normal price range</h1>  
+		{%endif%}
+		</center>  
+	</body> 
+ 
+</html>

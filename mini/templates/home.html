@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>House Price Prediction Form</title>
+</head>
+<body>
+<center>
+<h1>House Price Prediction For Delhi</h1>
+<form action="{{url_for('home')}}" method="POST">
+    <!-- Input for integer value -->
+    <label>Area:</label>
+    <input type="number" name="area" required>
+
+    <br><br>
+
+    <!-- Two dropdowns with 1 to 4 values -->
+    <label for="dropdown1">BHK:</label>
+    <select name="bhk" method="POST">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+
+    <label for="dropdown2">NO. of Bathrooms:</label>
+    <select id="dropdown2" name="bath" method="POST">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+
+    <br><br>
+
+    <!-- Two radio buttons -->
+	<label>Furnished:</label>
+    <label>YES:</label>
+    <input type="radio" name="fur" value="1" method="POST">
+
+    <label>NO:</label>
+    <input type="radio" name="fur" value="0" method="POST">
+
+    <br><br>
+
+    <!-- Dropdown with 200 options -->
+    <label>Select Location:</label>
+    <select id="myDropdown" name="loc" method="POST" >
+        <script>
+		// Assuming you have some data or a loop to generate values
+		var values = ["Rohini Sector 24", 'Rohini Sector 13', 'Rohini Sector 21',
+       'Rohini Sector 22', 'Rohini Sector 20', 'Rohini Sector 25',
+       'Rohini Sector 16', 'Rohini Sector 14', 'Rohini Sector 9',
+       'Vijay Vihar', 'Prashant Vihar', 'Rohini Sector 5',
+       'Rohini Sector 28', 'Rohini Sector 19', 'Lajpat Nagar',
+       'Lajpat Nagar 2', 'Lajpat Nagar 1', 'Lajpat Nagar 3',
+       'Dwarka Sector 24', 'Budh Vihar', 'Budh Vihar Phase 1',
+       'Rohini Sector 23', 'Uttam Nagar', 'Dwarka Mor',
+       'Dwarka Sector 12', 'Karol Bagh', 'Greater Kailash 1',
+       'New Friends Colony', 'Greater Kailash', 'Shahdara', 'Laxmi Nagar',
+       'Razapur Khurd', 'Patel Nagar West', 'Patel Nagar', 'Vasant Kunj',
+       'Vasant Kunj Sector D', 'Vasant Kunj Sector A',
+       'Vasant Kunj Sector C', 'Vasant Kunj Sector B', 'Okhla',
+       'Geeta Colony', 'Khairatabad', 'Chandni Chowk', 'Saket',
+       'Safdarjung Enclave', 'Safdarjung',
+       'Krishna Nagar-Safdarjung Enclave', 'Paschim Vihar Block B4',
+       'Paschim Vihar', 'Paschim Vihar Block B1',
+       'Paschim Vihar Block A2', 'Sunder Vihar', 'Dwarka', 'CWG',
+       'Alaknanda', 'Kilokri', 'Sarita Vihar Pocket B',
+       'Sarita Vihar Pocket F', 'Sarita Vihar', 'Sultanpur', 'Mehrauli',
+       'Mahavir Enclave', 'Mahavir Enclave Part 1', 'Narela',
+       'Narela Sector A9', 'Malviya Nagar', 'Dilshad Garden',
+       'Vasundhara Enclave', 'Kirti Nagar', 'Sheikh Sarai Phase 1',
+       'Sheikh Sarai Phase 2', 'Sheikh Sarai', 'Punjabi Bagh',
+       'Punjabi Bagh West', 'Punjabi Bagh East', 'Kalkaji',
+       'Kalkaji Extention', 'Hauz Khas', 'Chittaranjan Park',
+       'Chittaranjan Park Block A']; 
+	   
+	   var values2 = [55, 47, 52, 53, 51, 56, 49, 48, 59, 79, 42, 58, 57, 50, 23, 25, 24,
+       26, 11,  1,  2, 54, 72,  9, 10, 18, 14, 34, 13, 66, 27, 46, 41, 40,
+       73, 77, 74, 76, 75, 35, 12, 19,  4, 62, 61, 60, 22, 39, 36, 38, 37,
+       71,  8,  3,  0, 20, 64, 65, 63, 70, 31, 28, 29, 32, 33, 30,  7, 78,
+       21, 68, 69, 67, 43, 45, 44, 16, 17, 15,  5,  6]
+
+		// Get the dropdown element
+		var dropdown = document.getElementById("myDropdown");
+
+		// Loop through the values and create options
+		for (var i = 0; i < values.length; i++) {
+        var option = document.createElement("option");
+        option.value = values2[i];
+        option.text = values[i];
+        dropdown.add(option);
+		}
+		</script>
+
+        <!-- ... Repeat up to 200 options ... -->
+    </select>
+
+    <br><br>
+
+    <!-- Dropdown with 1 to 5 values -->
+    <label>NO. of Parkings:</label>
+    <select name="park" method="POST">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+    </select>
+
+    <br><br>
+
+    <!-- Two radio buttons -->
+	<label>Status</label><br>
+    <label>Ready to move:</label>
+    <input type="radio" name="state" value=1 method="POST">
+
+    <label>Almost_ready:</label>
+    <input type="radio" name="state" value=0 method="POST">
+	
+
+    <br><br>
+
+    <!-- Two radio buttons -->
+	<label>Property type</label><br>
+    <label>New Property:</label>
+    <input type="radio" name="prop" value=0 method="POST">
+
+    <label>Resale:</label>
+    <input type="radio" name="prop" value=1 method="POST">
+
+    <br><br>
+	
+	<!-- Two radio buttons -->
+	<label>Property type</label><br>
+    <label>Builder Floor:</label>
+    <input type="radio" name="prop1" value=1 method="POST">
+
+    <label>Apartment:</label>
+    <input type="radio" name="prop1" value=0 method="POST">
+
+    <br><br>
+
+    <!-- Input for another integer value -->
+    <label for="anotherIntegerInput">Amount Per Sqft:</label>
+    <input type="number" name="sqf" method="POST">
+
+    <br><br>
+
+    <!-- Submit button -->
+    <input type="submit" value="predict!">
+</form>
+</center>
+</body>
+</html>
